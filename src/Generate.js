@@ -1,5 +1,5 @@
 const countPassword = 200;
-const lengthPassword = 4;
+const lengthPassword = 5;
 
 function Makeid(length) {
   let result = "";
