@@ -7,7 +7,7 @@
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
 <script>
-    const countPassword = 10000;
+    const countPassword = 200;
     const lengthPassword = 6;
 
     function Makeid(length) {
@@ -18,8 +18,9 @@
         const positionChar = (length) => Math.floor(Math.random() * length);
         for (let i = 0; i < length-1; i++) {
             if (i === length - 2) {
-                const dobbleChar = dictionary.charAt(positionChar(i - 1));
+                const dobbleChar = dictionary.charAt(positionChar(dictionary.length - 1));
                 const resultSplit = result.split("");
+                resultSplit.splice(positionChar(i), 0, dobbleChar);
                 resultSplit.splice(positionChar(i), 0, dobbleChar);
                 result = resultSplit.join("");
             } else result += characters.charAt(positionChar(charactersLength));
